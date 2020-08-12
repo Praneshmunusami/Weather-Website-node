@@ -6,6 +6,7 @@ const forecast = require("./Utils/foreCast");
 const geoCode = require("./Utils/geoCode");
 
 const app = express();
+const port = process.env.PORT || 3000;
 //define path to express
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsDirectoryPath = path.join(__dirname, "../views/views");
@@ -100,6 +101,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is Up");
+app.listen(port, () => {
+  console.log("Server is Up on Port Number: " + port);
 });
